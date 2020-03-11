@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>The Phone | Store</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <!-- header separation -------------------------------------------------------- -->
 <header>
 <ul>
-  <li><a href="#">Home</a></li>
-  <li><a href="#">News</a></li>
-  <li><a href="#">Contact</a></li>
-  <li><a href="#">About</a></li>
+    <li><img class="logo" src="./img/storeLogo.png"></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">About</a></li>
 </ul>
 </header>
 <!-- section 1 separation -------------------------------------------------------- -->
@@ -19,28 +21,28 @@
     <h2 class="title-top">Phones</h2>
     <div class="items">
         <div class="item">
-            <spam class="item-title">product1</spam>
+            <spam class="item-title">Phone X</spam>
             <img class="item-image" src="./img/prod1.jpg">
             <div class="items-detail">
-                <spam class="shop-item-price">R$123,90</spam>
+                <spam class="shop-item-price">R$1,230.90</spam>
                 <button class="item-purchase-button" type="button">ADD TO CART</button>
             </div>
         </div>
 
         <div class="item">
-            <spam class="item-title">product2</spam>
+            <spam class="item-title">Phone X Lite</spam>
             <img class="item-image" src="./img/prod2.jpg">
             <div class="items-detail">
-                <spam class="shop-item-price">R$60,00</spam>
+                <spam class="shop-item-price">R$600.00</spam>
                 <button class="item-purchase-button" type="button">ADD TO CART</button>
             </div>
         </div>
 
         <div class="item">
-            <spam class="item-title">product3</spam>
+            <spam class="item-title">Phone X2</spam>
             <img class="item-image" src="./img/prod3.jpg">
             <div class="items-detail">
-                <spam class="shop-item-price">R$2.890,00</spam>
+                <spam class="shop-item-price">R$2,890.00</spam>
                 <button class="item-purchase-button" type="button">ADD TO CART</button>
             </div>
         </div>
@@ -50,37 +52,22 @@
 <!-- cart separation -------------------------------------------------------- -->
 
 <section>
-    <h2 class="">CART</h2>
+    <h2 class="title-top">CART</h2>
     <div class="menu-cart">
-        <spam>PRODUCT</spam>
-        <spam>PRICE</spam>
-        <spam>QUANTITY</spam>
+        <spam id="product">PRODUCT</spam>
+        <spam id="price">PRICE</spam>
+        <spam id="quantity">QUANTITY</spam>
     </div>
 
     <div class="cart-items">
-<!-- -------------------------------------------------------------- -->
-
-        <div class="product" class="cart-item">        
-            <div class="box-img">
-                <img class="img" src="${imageSrc}">
-            </div>
-            <div class="box-info">
-                <div class="row">
-                    <div class="cart-line"><spam class="cart-item-title">${title}</spam></div>
-                    <div><button class="buttonRemove" type="button">REMOVE</button></div> 
-                </div>
-                <div><spam class="item-price">${priceItem}</spam></div>
-                <div class="input-and-btton"><input  class="quantity-input-value" type="number" value="1"></div>
-        
-            </div>  
         </div>
-<!-- -------------------------------------------------------------- -->
-        </div>
-    <div>
-        <spam>TOTAL</spam>
+    <div class="total">
+        <spam class="totalName">TOTAL</spam>
         <spam class="cart-total-element">R$0</spam>
     </div>
-    <button class="purchaseButton" type="button">PURCHASE</button>
+    <div class="finalStep">
+        <button class="purchaseButton" type="button">PURCHASE</button>
+    </div>
 </section>
 
 <!-- footer separation -------------------------------------------------------- -->
@@ -88,12 +75,12 @@
 <footer>
 
     <div>
-        <h3>storename</h3>
+        <h3 id="nameFooter">The Phone Store</h3>
         <ul>
-            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/facebook.svg"style="width:30px"; height="30px"></a></li>
-            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/instagram.svg"style="width:30px"; height="30px"></a></li>
-            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/twitter.svg"style="width:30px"; height="30px"></a></li>
-            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/linkedin.svg" style="width:30px"; height="30px"></a></li>
+            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/facebook.svg"style="width:30px"; height="30px"> ThePhoneStoreBr </a></li>
+            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/instagram.svg"style="width:30px"; height="30px"> @ThePhoneStore</a></li>
+            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/twitter.svg"style="width:30px"; height="30px"> @ThePhoneStore2020 </a></li>
+            <li class="redes-sociais"><a href="" target="_blank"><img src="./img/linkedin.svg" style="width:30px"; height="30px"> ThePhoneStoreBrazil</a></li>
         </ul>
     </div>
 </footer>

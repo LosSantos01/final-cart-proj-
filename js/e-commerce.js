@@ -84,16 +84,6 @@ function addToCartFunction(title, priceItem, imageSrc){
 
     cartRow.classList.add("cart-item","product");
     var cartRowElements = `
-    <!-- <div class="cart-line">
-             <img class="img" src="${imageSrc}">
-             <spam class="cart-item-title">${title}</spam>
-         </div>
-         <spam class="item-price">${priceItem}</spam>
-         <div class="input-and-btton">
-             <input  class="quantity-input-value" type="number" value="1">
-             <button class="buttonRemove" type="button">REMOVE</button>
-         </div> -->
-
          <div class="box-img">
          <img class="img" src="${imageSrc}">
      </div>
