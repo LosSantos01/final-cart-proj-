@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+ }
+
+ body{
+    min-width: 600px;
+ }
+ 
+ html {
+  scroll-behavior: smooth;
+  height: 100%;
+  min-height: 100%;
+  font-family: "Oswald",sans-serif;
+ }
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: #111;
+  }
+  
+}
+
+
+
+.title-top{
+  display: flex;
+  justify-content: left;
+  padding-left: 60px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.items{
+    justify-content: space-between;
+    display:flex;
+    flex:wrap;
+}
+
+.item{
+    width:50%;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item-image{
+     width:100%;
+}
+
+.item-title{
+    justify-content: flex-end;
+    margin: 15px;
+}
+
+.items-detail{
+    display:flex;
+    justify-content: center;
+}
+
+.shop-item-price{
+    margin-right: 5px;
+}
+
+.item-purchase-button{
+    padding:5px;
+    font-family: "Oswald", sans-serif;
+// -----------------
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+margin: 0;
+padding: 0;
+border-radius: 0;
+border: none;
+border-color: transparent;
+background-color: transparent;
+}
+.menu-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+// let's care about the cat items now
+
+.cart-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-items-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

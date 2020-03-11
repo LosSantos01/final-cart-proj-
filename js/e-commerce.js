@@ -1,0 +1,114 @@
+var deleteCartItemButton = document.getElementsByClassName("buttonRemove")
+for(var i = 0; i < deleteCartItemButton.length; i++){
+    var button = deleteCartItemButton [i]
+    button.addEventListener("click", removeCartButton)
+}
+
+var quantityElements = document.getElementsByClassName("quantity-input-value")
+for(var i = 0; i < quantityElements.length; i++){
+    var input = quantityElements[i]
+    input.addEventListener("change", quantityChanged)
+}
+
+document.getElementsByClassName("purchaseButton")[0].addEventListener("click", finalPurchase);
+
+function finalPurchase (){
+    alert("thanks for the purchase");
+    var cartItems = document.getElementsByClassName("cart-items")[0];
+    while(cartItems.hasChildNodes()){
+        cartItems.removeChild(cartItems.firstChild);
+    }
+    updateCartTotalLess();
+}
+
+function removeCartButton(event){
+    var clickedButton = event.target
+        clickedButton.parentElement.parentElement.parentElement.parentElement.remove()
+        updateCartTotalLess()
+}
+
+function quantityChanged(event){
+    var input = event.target
+    if(isNaN(input.value) || input.value <= 0){
+        input.value = 1;
+    }
+    updateCartTotalLess()
+}
+
+function updateCartTotalLess(){
+    var cartItemT = document.getElementsByClassName("cart-items")[0]
+    var cartRows = document.getElementsByClassName("cart-item")
+    var total = 0
+    for(var i = 0; i < cartRows.length; i++){
+        var cartRow = cartRows[i];
+        var theActualPrice = cartRow.getElementsByClassName("item-price")[0];
+        var theActualQauntity = cartRow.getElementsByClassName("quantity-input-value")[0];
+        
+        var thePriceValue = parseFloat(theActualPrice.innerText.replace(/\D/g, ""));
+        var theQuantityValue = +theActualQauntity.value;
+        total = total + (thePriceValue * theQuantityValue);
+    }
+    total = Math.round(total*100)/100;
+    document.getElementsByClassName("cart-total-element")[0].innerText = '$' + total;
+}
+
+
+
+
+var addToCartButton = document.getElementsByClassName("item-purchase-button");
+for(var i = 0; i < addToCartButton.length; i++){
+    var button = addToCartButton [i]
+    button.addEventListener("click", addCartButton)
+}
+
+function addCartButton(event){
+    var button = event.target;
+    var shopItem = button.parentElement.parentElement;
+    var title = shopItem.getElementsByClassName("item-title")[0].innerText;
+    var priceItem = shopItem.getElementsByClassName("shop-item-price")[0].innerText;
+    var imageSrc = shopItem.getElementsByClassName("item-image")[0].src;
+    addToCartFunction(title, priceItem, imageSrc)
+    updateCartTotalLess()
+}
+
+function addToCartFunction(title, priceItem, imageSrc){
+    var cartRow = document.createElement('div');
+    var theClassItems = document.getElementsByClassName("cart-items")[0];
+    
+    var cartItemNames = theClassItems.getElementsByClassName("cart-item-title")
+    for(var i = 0; i < cartItemNames.length; i++) {
+        if(cartItemNames[i].innerText == title)
+            alert("this item is already added to cart")
+
+    }
+
+    cartRow.classList.add("cart-item","product");
+    var cartRowElements = `
+    <!-- <div class="cart-line">
+             <img class="img" src="${imageSrc}">
+             <spam class="cart-item-title">${title}</spam>
+         </div>
+         <spam class="item-price">${priceItem}</spam>
+         <div class="input-and-btton">
+             <input  class="quantity-input-value" type="number" value="1">
+             <button class="buttonRemove" type="button">REMOVE</button>
+         </div> -->
+
+         <div class="box-img">
+         <img class="img" src="${imageSrc}">
+     </div>
+     <div class="box-info">
+         <div class="row">
+             <div class="cart-line"><spam class="cart-item-title">${title}</spam></div>
+             <div><button class="buttonRemove" type="button">REMOVE</button></div> 
+         </div>
+         <div><spam class="item-price">${priceItem}</spam></div>
+         <div class="input-and-btton"><input  class="quantity-input-value" type="number" value="1"></div>
+ 
+     </div>
+    `;
+    cartRow.innerHTML = cartRowElements 
+    theClassItems.append(cartRow)
+    cartRow.getElementsByClassName("buttonRemove")[0].addEventListener("click", removeCartButton);
+    cartRow.getElementsByClassName("quantity-input-value")[0].addEventListener("change", quantityChanged)
+}
